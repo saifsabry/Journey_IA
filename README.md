@@ -96,6 +96,28 @@ This command:
 
 Preview the changes Terraform will make:
 
+
+## 📝 Importing the resourses from aws 
+
+### Import these before running terraform plan
+
+If you need to import existing S3 buckets:
+
+```bash
+chmod +x import_s3_buckets.sh
+./import_s3_buckets.sh
+```
+
+```bash
+chmod +x import_lambda.sh
+./import_lambda.sh
+```
+
+```bash
+chmod +x import_subnets.sh
+./import_subnets.sh
+```
+
 ```bash
 terraform plan
 ```
@@ -110,16 +132,6 @@ This command:
 - Validates your configuration
 - Does not make any actual changes
 
-## 📝 Important Notes
-
-### S3 Bucket Import
-
-If you need to import existing S3 buckets:
-
-```bash
-chmod +x import_s3_buckets.sh
-./import_s3_buckets.sh
-```
 
 
 ---
