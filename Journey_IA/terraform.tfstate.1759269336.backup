@@ -1,0 +1,3182 @@
+{
+  "version": 4,
+  "terraform_version": "1.13.3",
+  "serial": 55,
+  "lineage": "03e26717-90bd-2810-17fc-1cdae6f2e91e",
+  "outputs": {},
+  "resources": [
+    {
+      "module": "module.iam_groups",
+      "mode": "managed",
+      "type": "aws_iam_group",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "Developers",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::971422687659:group/Developers",
+            "id": "Developers",
+            "name": "Developers",
+            "path": "/",
+            "unique_id": "AGPA6ELKN4GV56L22FNNS"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "ManagedMFA",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::971422687659:group/ManagedMFA",
+            "id": "ManagedMFA",
+            "name": "ManagedMFA",
+            "path": "/",
+            "unique_id": "AGPA6ELKN4GV3BXYO5ANM"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        },
+        {
+          "index_key": "RequiredMFA",
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:iam::971422687659:group/RequiredMFA",
+            "id": "RequiredMFA",
+            "name": "RequiredMFA",
+            "path": "/",
+            "unique_id": "AGPA6ELKN4GV72NYOVZPD"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.lambda_functions",
+      "mode": "managed",
+      "type": "aws_lambda_function",
+      "name": "call_workflow_async",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "architectures": [
+              "arm64"
+            ],
+            "arn": "arn:aws:lambda:eu-west-1:971422687659:function:one-journey-nodes-core-genai-callWorkflowAsyncNode",
+            "code_sha256": "/sSjFRPTHrp4jZ+hMNuHf1LB7Blh+eipp7vcujbe0v0=",
+            "code_signing_config_arn": "",
+            "dead_letter_config": [],
+            "description": "",
+            "environment": [
+              {
+                "variables": {
+                  "ACCOUNT_ID": "971422687659",
+                  "API_ENDPOINT": "https://d5tcv80br4.execute-api.eu-west-1.amazonaws.com/genai/",
+                  "CDN_ENDPOINT": "https://d7cnvwmb0wtsp.cloudfront.net/",
+                  "CORS_ORIGIN": "*",
+                  "DEBUG_LOG": "/aws/one-journey/one-journey-nodes-core-DebugLogs",
+                  "DOMAIN_SUFFIX": "one-journey",
+                  "DYNAMODB_TABLE_CHANNEL_MESSAGES": "one-journey-channel-messages",
+                  "DYNAMODB_TABLE_COMMON_OBJECTS": "one-journey-common-objects",
+                  "DYNAMODB_TABLE_COST": "one-journey-cost",
+                  "DYNAMODB_TABLE_COUNTERS_STORAGE_CHANNEL": "one-journey-counters-storage-channel",
+                  "DYNAMODB_TABLE_EXECUTIONS_V5": "one-journey-executions-v5",
+                  "DYNAMODB_TABLE_EXECUTIONS_V5_DETAIL": "one-journey-executions-v5-detail",
+                  "DYNAMODB_TABLE_EXECUTIONS_V5_GSI_CREATED_AT": "one-journey-executions-v5-gsi-createdAt",
+                  "DYNAMODB_TABLE_EXECUTIONS_V5_GSI_UPDATED_AT": "one-journey-executions-v5-gsi-updatedAt",
+                  "DYNAMODB_TABLE_MUTEX_LOCK": "one-journey-mutex-lock",
+                  "DYNAMODB_TABLE_SESSIONS": "one-journey-sessions",
+                  "DYNAMODB_TABLE_STT_OPERATIONS": "one-journey-sttOperations",
+                  "DYNAMODB_TABLE_WEBSOCKETS_MANAGER": "one-journey-websockets-manager",
+                  "DYNAMODB_TABLE_WORKFLOWS_BACKUP": "one-journey-workflows-backup",
+                  "DYNAMODB_TABLE_WORKFLOW_CONTEXT": "one-journey-workflow-context",
+                  "ERROR_LOG": "/aws/one-journey/one-journey-nodes-core-ErrorLogs",
+                  "EVENTBRIDGE_MESSAGE_BUS": "one-journey-messages-bus-genai",
+                  "HOSTING_BUCKET": "one-journey-hosting-bucket-genai",
+                  "MAIN_CONFIGURATION_ID": "@MAIN_CONFIGURATION",
+                  "MAX_CHATGPT_RETRY_REQUEST": "5",
+                  "ONE_JOURNEY_DATA_BUCKET": "one-journey-data-bucket-genai",
+                  "ONE_JOURNEY_FILES_BUCKET": "one-journey-files-bucket-genai",
+                  "REGION": "eu-west-1",
+                  "STAGE": "genai",
+                  "TRANSCRIPTIONS_BUCKET": "one-journey-transcriptions-genai",
+                  "USER_POOL_ID": "eu-west-1_M21ToRrBa",
+                  "VERSION": "v1",
+                  "WEBSOCKET_API_ENDPOINT": "wss://mu5nzg1mp2.execute-api.eu-west-1.amazonaws.com/genai/"
+                }
+              }
+            ],
+            "ephemeral_storage": [
+              {
+                "size": 512
+              }
+            ],
+            "file_system_config": [],
+            "filename": null,
+            "function_name": "one-journey-nodes-core-genai-callWorkflowAsyncNode",
+            "handler": "./src/api/v1/node/callWorkflowAsync/event.handler",
+            "id": "one-journey-nodes-core-genai-callWorkflowAsyncNode",
+            "image_config": [],
+            "image_uri": "",
+            "invoke_arn": "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:971422687659:function:one-journey-nodes-core-genai-callWorkflowAsyncNode/invocations",
+            "kms_key_arn": "",
+            "last_modified": "2025-08-14T09:44:44.000+0000",
+            "layers": [],
+            "logging_config": [
+              {
+                "application_log_level": "",
+                "log_format": "Text",
+                "log_group": "/aws/lambda/one-journey-nodes-core-genai-callWorkflowAsyncNode",
+                "system_log_level": ""
+              }
+            ],
+            "memory_size": 1536,
+            "package_type": "Zip",
+            "publish": null,
+            "qualified_arn": "arn:aws:lambda:eu-west-1:971422687659:function:one-journey-nodes-core-genai-callWorkflowAsyncNode:4",
+            "qualified_invoke_arn": "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:971422687659:function:one-journey-nodes-core-genai-callWorkflowAsyncNode:4/invocations",
+            "replace_security_groups_on_destroy": null,
+            "replacement_security_group_ids": null,
+            "reserved_concurrent_executions": -1,
+            "role": "arn:aws:iam::971422687659:role/OjcallWorkflowAsyncNodeRole",
+            "runtime": "nodejs20.x",
+            "s3_bucket": null,
+            "s3_key": null,
+            "s3_object_version": null,
+            "signing_job_arn": "",
+            "signing_profile_version_arn": "",
+            "skip_destroy": false,
+            "snap_start": [],
+            "source_code_hash": "",
+            "source_code_size": 18579501,
+            "tags": {
+              "STAGE": "genai"
+            },
+            "tags_all": {
+              "STAGE": "genai"
+            },
+            "timeout": 6,
+            "timeouts": null,
+            "tracing_config": [
+              {
+                "mode": "PassThrough"
+              }
+            ],
+            "version": "4",
+            "vpc_config": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.lambda_functions",
+      "mode": "managed",
+      "type": "aws_lambda_function",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "call_workflow_async",
+          "schema_version": 0,
+          "attributes": {
+            "architectures": [
+              "arm64"
+            ],
+            "arn": "arn:aws:lambda:eu-west-1:971422687659:function:one-journey-nodes-core-genai-callWorkflowAsyncNode",
+            "code_sha256": "/sSjFRPTHrp4jZ+hMNuHf1LB7Blh+eipp7vcujbe0v0=",
+            "code_signing_config_arn": "",
+            "dead_letter_config": [],
+            "description": "",
+            "environment": [
+              {
+                "variables": {
+                  "ACCOUNT_ID": "971422687659",
+                  "API_ENDPOINT": "https://d5tcv80br4.execute-api.eu-west-1.amazonaws.com/genai/",
+                  "CDN_ENDPOINT": "https://d7cnvwmb0wtsp.cloudfront.net/",
+                  "CORS_ORIGIN": "*",
+                  "DEBUG_LOG": "/aws/one-journey/one-journey-nodes-core-DebugLogs",
+                  "DOMAIN_SUFFIX": "one-journey",
+                  "DYNAMODB_TABLE_CHANNEL_MESSAGES": "one-journey-channel-messages",
+                  "DYNAMODB_TABLE_COMMON_OBJECTS": "one-journey-common-objects",
+                  "DYNAMODB_TABLE_COST": "one-journey-cost",
+                  "DYNAMODB_TABLE_COUNTERS_STORAGE_CHANNEL": "one-journey-counters-storage-channel",
+                  "DYNAMODB_TABLE_EXECUTIONS_V5": "one-journey-executions-v5",
+                  "DYNAMODB_TABLE_EXECUTIONS_V5_DETAIL": "one-journey-executions-v5-detail",
+                  "DYNAMODB_TABLE_EXECUTIONS_V5_GSI_CREATED_AT": "one-journey-executions-v5-gsi-createdAt",
+                  "DYNAMODB_TABLE_EXECUTIONS_V5_GSI_UPDATED_AT": "one-journey-executions-v5-gsi-updatedAt",
+                  "DYNAMODB_TABLE_MUTEX_LOCK": "one-journey-mutex-lock",
+                  "DYNAMODB_TABLE_SESSIONS": "one-journey-sessions",
+                  "DYNAMODB_TABLE_STT_OPERATIONS": "one-journey-sttOperations",
+                  "DYNAMODB_TABLE_WEBSOCKETS_MANAGER": "one-journey-websockets-manager",
+                  "DYNAMODB_TABLE_WORKFLOWS_BACKUP": "one-journey-workflows-backup",
+                  "DYNAMODB_TABLE_WORKFLOW_CONTEXT": "one-journey-workflow-context",
+                  "ERROR_LOG": "/aws/one-journey/one-journey-nodes-core-ErrorLogs",
+                  "EVENTBRIDGE_MESSAGE_BUS": "one-journey-messages-bus-genai",
+                  "HOSTING_BUCKET": "one-journey-hosting-bucket-genai",
+                  "MAIN_CONFIGURATION_ID": "@MAIN_CONFIGURATION",
+                  "MAX_CHATGPT_RETRY_REQUEST": "5",
+                  "ONE_JOURNEY_DATA_BUCKET": "one-journey-data-bucket-genai",
+                  "ONE_JOURNEY_FILES_BUCKET": "one-journey-files-bucket-genai",
+                  "REGION": "eu-west-1",
+                  "STAGE": "genai",
+                  "TRANSCRIPTIONS_BUCKET": "one-journey-transcriptions-genai",
+                  "USER_POOL_ID": "eu-west-1_M21ToRrBa",
+                  "VERSION": "v1",
+                  "WEBSOCKET_API_ENDPOINT": "wss://mu5nzg1mp2.execute-api.eu-west-1.amazonaws.com/genai/"
+                }
+              }
+            ],
+            "ephemeral_storage": [
+              {
+                "size": 512
+              }
+            ],
+            "file_system_config": [],
+            "filename": null,
+            "function_name": "one-journey-nodes-core-genai-callWorkflowAsyncNode",
+            "handler": "./src/api/v1/node/callWorkflowAsync/event.handler",
+            "id": "one-journey-nodes-core-genai-callWorkflowAsyncNode",
+            "image_config": [],
+            "image_uri": "",
+            "invoke_arn": "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:971422687659:function:one-journey-nodes-core-genai-callWorkflowAsyncNode/invocations",
+            "kms_key_arn": "",
+            "last_modified": "2025-08-14T09:44:44.000+0000",
+            "layers": [],
+            "logging_config": [
+              {
+                "application_log_level": "",
+                "log_format": "Text",
+                "log_group": "/aws/lambda/one-journey-nodes-core-genai-callWorkflowAsyncNode",
+                "system_log_level": ""
+              }
+            ],
+            "memory_size": 1536,
+            "package_type": "Zip",
+            "publish": null,
+            "qualified_arn": "arn:aws:lambda:eu-west-1:971422687659:function:one-journey-nodes-core-genai-callWorkflowAsyncNode:4",
+            "qualified_invoke_arn": "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:971422687659:function:one-journey-nodes-core-genai-callWorkflowAsyncNode:4/invocations",
+            "replace_security_groups_on_destroy": null,
+            "replacement_security_group_ids": null,
+            "reserved_concurrent_executions": -1,
+            "role": "arn:aws:iam::971422687659:role/OjcallWorkflowAsyncNodeRole",
+            "runtime": "nodejs20.x",
+            "s3_bucket": null,
+            "s3_key": null,
+            "s3_object_version": null,
+            "signing_job_arn": "",
+            "signing_profile_version_arn": "",
+            "skip_destroy": false,
+            "snap_start": [],
+            "source_code_hash": "",
+            "source_code_size": 18579501,
+            "tags": {
+              "STAGE": "genai"
+            },
+            "tags_all": {
+              "STAGE": "genai"
+            },
+            "timeout": 6,
+            "timeouts": null,
+            "tracing_config": [
+              {
+                "mode": "PassThrough"
+              }
+            ],
+            "version": "4",
+            "vpc_config": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        },
+        {
+          "index_key": "cron_lambda",
+          "schema_version": 0,
+          "attributes": {
+            "architectures": [
+              "x86_64"
+            ],
+            "arn": "arn:aws:lambda:eu-west-1:971422687659:function:one-journey-genai-cronLambda",
+            "code_sha256": "ZJkAOn7wqBIywuy/OvtdIpl245jxjZScj/UR0MGEXLI=",
+            "code_signing_config_arn": "",
+            "dead_letter_config": [],
+            "description": "",
+            "environment": [
+              {
+                "variables": {
+                  "ACCOUNT_ID": "971422687659",
+                  "API_ENDPOINT": "https://d5tcv80br4.execute-api.eu-west-1.amazonaws.com/genai/",
+                  "AUDIOS_BUCKET": "one-journey-audiorecord-genai",
+                  "CDN_ENDPOINT": "https://d7cnvwmb0wtsp.cloudfront.net/",
+                  "COGNITO_USER_POOL": "eu-west-1_M21ToRrBa",
+                  "COGNITO_USER_POOL_CLIENT": "2tonlc0fcbruoestl0c4fuj8ts",
+                  "CORE_GDS_EVENT_ARN": "arn:aws:lambda:eu-west-1:971422687659:function:one-journey-genai-coreGDSEvent",
+                  "CORE_S3_EVENT_ARN": "arn:aws:lambda:eu-west-1:971422687659:function:one-journey-genai-coreS3Event",
+                  "CORS_ORIGIN": "*",
+                  "DEBUG_LOG": "/aws/one-journey/one-journey-DebugLogs",
+                  "DOMAIN_SUFFIX": "one-journey",
+                  "DYNAMODB_TABLE_CHANNEL_MESSAGES": "one-journey-channel-messages",
+                  "DYNAMODB_TABLE_COMMON_OBJECTS": "one-journey-common-objects",
+                  "DYNAMODB_TABLE_COST": "one-journey-cost",
+                  "DYNAMODB_TABLE_COUNTERS_STORAGE_CHANNEL": "one-journey-counters-storage-channel",
+                  "DYNAMODB_TABLE_EXECUTIONS": "one-journey-executions",
+                  "DYNAMODB_TABLE_EXECUTIONS_V5": "one-journey-executions-v5",
+                  "DYNAMODB_TABLE_EXECUTIONS_V5_DETAIL": "one-journey-executions-v5-detail",
+                  "DYNAMODB_TABLE_EXECUTIONS_V5_GSI_CREATED_AT": "one-journey-executions-v5-gsi-createdAt",
+                  "DYNAMODB_TABLE_EXECUTIONS_V5_GSI_UPDATED_AT": "one-journey-executions-v5-gsi-updatedAt",
+                  "DYNAMODB_TABLE_MUTEX_LOCK": "one-journey-mutex-lock",
+                  "DYNAMODB_TABLE_SESSIONS": "one-journey-sessions",
+                  "DYNAMODB_TABLE_STT_OPERATIONS": "one-journey-sttOperations",
+                  "DYNAMODB_TABLE_SUSCRIPTIONS": "one-journey-suscriptions",
+                  "DYNAMODB_TABLE_WEBSOCKETS_MANAGER": "one-journey-websockets-manager",
+                  "DYNAMODB_TABLE_WORKFLOWS_BACKUP": "one-journey-workflows-backup",
+                  "DYNAMODB_TABLE_WORKFLOW_CONTEXT": "one-journey-workflow-context",
+                  "ERROR_LOG": "/aws/one-journey/one-journey-ErrorLogs",
+                  "EVENTBRIDGE_MESSAGE_BUS": "one-journey-messages-bus-genai",
+                  "HOSTING_BUCKET": "one-journey-hosting-bucket-genai",
+                  "KENDRA_S3_ROLE_ARN": "arn:aws:iam::971422687659:role/OneJourneyKendraS3Role",
+                  "KEYS_URL": "https://cognito-idp.eu-west-1.amazonaws.com/eu-west-1_M21ToRrBa/.well-known/jwks.json",
+                  "MAIN_CONFIGURATION_ID": "@MAIN_CONFIGURATION",
+                  "MAX_CHATGPT_RETRY_REQUEST": "5",
+                  "ONE_JOURNEY_DATA_BUCKET": "one-journey-data-bucket-genai",
+                  "ONE_JOURNEY_FILES_BUCKET": "one-journey-files-bucket-genai",
+                  "PROCESS_TRANSCRIPTION_ARN": "arn:aws:lambda:eu-west-1:971422687659:function:one-journey-genai-processTranscription",
+                  "REGION": "eu-west-1",
+                  "SQS_BATCH_QUEUE_URL": "https://sqs.eu-west-1.amazonaws.com/971422687659/one-journey-batch-queue-genai",
+                  "STAGE": "genai",
+                  "STORAGE_PROCESS_LAMBDA_ARN": "arn:aws:lambda:eu-west-1:971422687659:function:one-journey-genai-manageFileStorage",
+                  "STT_WEBHOOK_ARN": "arn:aws:lambda:eu-west-1:971422687659:function:one-journey-genai-sttWebhook",
+                  "TRANSCRIPTIONS_BUCKET": "one-journey-transcriptions-genai",
+                  "USER_POOL_CLIENT_ID": "2tonlc0fcbruoestl0c4fuj8ts",
+                  "USER_POOL_ID": "eu-west-1_M21ToRrBa",
+                  "VERSION": "v1",
+                  "WEBSOCKET_API_ENDPOINT": "wss://mu5nzg1mp2.execute-api.eu-west-1.amazonaws.com/genai/"
+                }
+              }
+            ],
+            "ephemeral_storage": [
+              {
+                "size": 512
+              }
+            ],
+            "file_system_config": [],
+            "filename": null,
+            "function_name": "one-journey-genai-cronLambda",
+            "handler": "src/api/v1/channel/cronJob/function.handler",
+            "id": "one-journey-genai-cronLambda",
+            "image_config": [],
+            "image_uri": "",
+            "invoke_arn": "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:971422687659:function:one-journey-genai-cronLambda/invocations",
+            "kms_key_arn": "",
+            "last_modified": "2025-09-29T14:28:34.000+0000",
+            "layers": [
+              "arn:aws:lambda:eu-west-1:971422687659:layer:ffmpegv1:4"
+            ],
+            "logging_config": [
+              {
+                "application_log_level": "",
+                "log_format": "Text",
+                "log_group": "/aws/lambda/one-journey-genai-cronLambda",
+                "system_log_level": ""
+              }
+            ],
+            "memory_size": 1536,
+            "package_type": "Zip",
+            "publish": null,
+            "qualified_arn": "arn:aws:lambda:eu-west-1:971422687659:function:one-journey-genai-cronLambda:7",
+            "qualified_invoke_arn": "arn:aws:apigateway:eu-west-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-west-1:971422687659:function:one-journey-genai-cronLambda:7/invocations",
+            "replace_security_groups_on_destroy": null,
+            "replacement_security_group_ids": null,
+            "reserved_concurrent_executions": -1,
+            "role": "arn:aws:iam::971422687659:role/one-journey-genai-cronLambda-eu-west-1-lambdaRole",
+            "runtime": "nodejs20.x",
+            "s3_bucket": null,
+            "s3_key": null,
+            "s3_object_version": null,
+            "signing_job_arn": "",
+            "signing_profile_version_arn": "",
+            "skip_destroy": false,
+            "snap_start": [],
+            "source_code_hash": "",
+            "source_code_size": 15695991,
+            "tags": {
+              "STAGE": "genai"
+            },
+            "tags_all": {
+              "STAGE": "genai"
+            },
+            "timeout": 6,
+            "timeouts": null,
+            "tracing_config": [
+              {
+                "mode": "PassThrough"
+              }
+            ],
+            "version": "7",
+            "vpc_config": []
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6NjAwMDAwMDAwMDAwLCJ1cGRhdGUiOjYwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.routing",
+      "mode": "managed",
+      "type": "aws_internet_gateway",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:eu-west-1:971422687659:internet-gateway/igw-01f85f494fa086648",
+            "id": "igw-01f85f494fa086648",
+            "owner_id": "971422687659",
+            "tags": {
+              "Name": "igw-01"
+            },
+            "tags_all": {
+              "Name": "igw-01"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0bb8a69ff2508b49d"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.routing",
+      "mode": "managed",
+      "type": "aws_route",
+      "name": "default",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "carrier_gateway_id": "",
+            "core_network_arn": "",
+            "destination_cidr_block": "0.0.0.0/0",
+            "destination_ipv6_cidr_block": "",
+            "destination_prefix_list_id": "",
+            "egress_only_gateway_id": "",
+            "gateway_id": "igw-01f85f494fa086648",
+            "id": "r-rtb-02584e20089727e1a1080289494",
+            "instance_id": "",
+            "instance_owner_id": "",
+            "local_gateway_id": "",
+            "nat_gateway_id": "",
+            "network_interface_id": "",
+            "origin": "CreateRoute",
+            "route_table_id": "rtb-02584e20089727e1a",
+            "state": "active",
+            "timeouts": null,
+            "transit_gateway_id": "",
+            "vpc_endpoint_id": "",
+            "vpc_peering_connection_id": ""
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.routing",
+      "mode": "managed",
+      "type": "aws_route_table",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "arn": "arn:aws:ec2:eu-west-1:971422687659:route-table/rtb-02584e20089727e1a",
+            "id": "rtb-02584e20089727e1a",
+            "owner_id": "971422687659",
+            "propagating_vgws": [],
+            "route": [
+              {
+                "carrier_gateway_id": "",
+                "cidr_block": "0.0.0.0/0",
+                "core_network_arn": "",
+                "destination_prefix_list_id": "",
+                "egress_only_gateway_id": "",
+                "gateway_id": "igw-01f85f494fa086648",
+                "ipv6_cidr_block": "",
+                "local_gateway_id": "",
+                "nat_gateway_id": "",
+                "network_interface_id": "",
+                "transit_gateway_id": "",
+                "vpc_endpoint_id": "",
+                "vpc_peering_connection_id": ""
+              }
+            ],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "vpc_id": "vpc-0bb8a69ff2508b49d"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.routing",
+      "mode": "managed",
+      "type": "aws_route_table_association",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "subnet1-euwest1",
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-0d93c98c281c4aa50",
+            "route_table_id": "rtb-02584e20089727e1a",
+            "subnet_id": "subnet-0fc5be2b5c992e900",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        },
+        {
+          "index_key": "subnet2-euwest1",
+          "schema_version": 0,
+          "attributes": {
+            "gateway_id": "",
+            "id": "rtbassoc-0866f3dbcd504e7a2",
+            "route_table_id": "rtb-02584e20089727e1a",
+            "subnet_id": "subnet-07155ea73ae4fe372",
+            "timeouts": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjozMDAwMDAwMDAwMDAsImRlbGV0ZSI6MzAwMDAwMDAwMDAwLCJ1cGRhdGUiOjEyMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "autohosting_files",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::autohosting-files",
+            "bucket": "autohosting-files",
+            "bucket_domain_name": "autohosting-files.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "autohosting-files.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "autohosting-files",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": true
+                  }
+                ]
+              }
+            ],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "oj_characters",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::oj-characters-12345-lnou0tzreyxh7hqfwvekw",
+            "bucket": "oj-characters-12345-lnou0tzreyxh7hqfwvekw",
+            "bucket_domain_name": "oj-characters-12345-lnou0tzreyxh7hqfwvekw.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "oj-characters-12345-lnou0tzreyxh7hqfwvekw.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "oj-characters-12345-lnou0tzreyxh7hqfwvekw",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "oj_gellogoogle",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::oj-gellogoogle-hq5cjfybzifwz2585ebtl",
+            "bucket": "oj-gellogoogle-hq5cjfybzifwz2585ebtl",
+            "bucket_domain_name": "oj-gellogoogle-hq5cjfybzifwz2585ebtl.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "oj-gellogoogle-hq5cjfybzifwz2585ebtl.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "oj-gellogoogle-hq5cjfybzifwz2585ebtl",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "oj_hellochirp2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::oj-hellochirp2-ge9unugfmnligurtzmohd",
+            "bucket": "oj-hellochirp2-ge9unugfmnligurtzmohd",
+            "bucket_domain_name": "oj-hellochirp2-ge9unugfmnligurtzmohd.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "oj-hellochirp2-ge9unugfmnligurtzmohd.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "oj-hellochirp2-ge9unugfmnligurtzmohd",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "oj_hellodeepgram",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::oj-hellodeepgram-0qzlwogoxoofw5cs9ujzl",
+            "bucket": "oj-hellodeepgram-0qzlwogoxoofw5cs9ujzl",
+            "bucket_domain_name": "oj-hellodeepgram-0qzlwogoxoofw5cs9ujzl.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "oj-hellodeepgram-0qzlwogoxoofw5cs9ujzl.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "oj-hellodeepgram-0qzlwogoxoofw5cs9ujzl",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "oj_hellodeepgram_2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::oj-hellodeepgram-bfj6gxpdmgtdyu9lm3oht",
+            "bucket": "oj-hellodeepgram-bfj6gxpdmgtdyu9lm3oht",
+            "bucket_domain_name": "oj-hellodeepgram-bfj6gxpdmgtdyu9lm3oht.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "oj-hellodeepgram-bfj6gxpdmgtdyu9lm3oht.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "oj-hellodeepgram-bfj6gxpdmgtdyu9lm3oht",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "oj_stt_hosting",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::oj-stt-hosting-xaiyor7sstvvlkcbnichu",
+            "bucket": "oj-stt-hosting-xaiyor7sstvvlkcbnichu",
+            "bucket_domain_name": "oj-stt-hosting-xaiyor7sstvvlkcbnichu.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "oj-stt-hosting-xaiyor7sstvvlkcbnichu.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "oj-stt-hosting-xaiyor7sstvvlkcbnichu",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "oj_sttva",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::oj-sttva-wopbamwpm6ttddpmzfwig",
+            "bucket": "oj-sttva-wopbamwpm6ttddpmzfwig",
+            "bucket_domain_name": "oj-sttva-wopbamwpm6ttddpmzfwig.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "oj-sttva-wopbamwpm6ttddpmzfwig.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "oj-sttva-wopbamwpm6ttddpmzfwig",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "oj_transcripciones_genai",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::oj-transcripciones-genai-svuclmx8jabduiavugxeh",
+            "bucket": "oj-transcripciones-genai-svuclmx8jabduiavugxeh",
+            "bucket_domain_name": "oj-transcripciones-genai-svuclmx8jabduiavugxeh.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "oj-transcripciones-genai-svuclmx8jabduiavugxeh.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "oj-transcripciones-genai-svuclmx8jabduiavugxeh",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "one_journey_back_as_ecr_g_deployment_1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::one-journey-back-as-ecr-g-serverlessdeploymentbuck-dolibyjasqhp",
+            "bucket": "one-journey-back-as-ecr-g-serverlessdeploymentbuck-dolibyjasqhp",
+            "bucket_domain_name": "one-journey-back-as-ecr-g-serverlessdeploymentbuck-dolibyjasqhp.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "one-journey-back-as-ecr-g-serverlessdeploymentbuck-dolibyjasqhp.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "one-journey-back-as-ecr-g-serverlessdeploymentbuck-dolibyjasqhp",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "{\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"Bool\":{\"aws:SecureTransport\":\"false\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":[\"arn:aws:s3:::one-journey-back-as-ecr-g-serverlessdeploymentbuck-dolibyjasqhp/*\",\"arn:aws:s3:::one-journey-back-as-ecr-g-serverlessdeploymentbuck-dolibyjasqhp\"]}],\"Version\":\"2008-10-17\"}",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {
+              "STAGE": "genai"
+            },
+            "tags_all": {
+              "STAGE": "genai"
+            },
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "one_journey_back_as_ecr_g_deployment_2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::one-journey-back-as-ecr-g-serverlessdeploymentbuck-rjl82uuxxofm",
+            "bucket": "one-journey-back-as-ecr-g-serverlessdeploymentbuck-rjl82uuxxofm",
+            "bucket_domain_name": "one-journey-back-as-ecr-g-serverlessdeploymentbuck-rjl82uuxxofm.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "one-journey-back-as-ecr-g-serverlessdeploymentbuck-rjl82uuxxofm.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "one-journey-back-as-ecr-g-serverlessdeploymentbuck-rjl82uuxxofm",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "{\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"Bool\":{\"aws:SecureTransport\":\"false\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":[\"arn:aws:s3:::one-journey-back-as-ecr-g-serverlessdeploymentbuck-rjl82uuxxofm/*\",\"arn:aws:s3:::one-journey-back-as-ecr-g-serverlessdeploymentbuck-rjl82uuxxofm\"]}],\"Version\":\"2008-10-17\"}",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {
+              "STAGE": "genai-dev"
+            },
+            "tags_all": {
+              "STAGE": "genai-dev"
+            },
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "one_journey_back_as_ecr_i_deployment",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::one-journey-back-as-ecr-i-serverlessdeploymentbuck-pnfckzyd5aah",
+            "bucket": "one-journey-back-as-ecr-i-serverlessdeploymentbuck-pnfckzyd5aah",
+            "bucket_domain_name": "one-journey-back-as-ecr-i-serverlessdeploymentbuck-pnfckzyd5aah.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "one-journey-back-as-ecr-i-serverlessdeploymentbuck-pnfckzyd5aah.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "one-journey-back-as-ecr-i-serverlessdeploymentbuck-pnfckzyd5aah",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "{\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"Bool\":{\"aws:SecureTransport\":\"false\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":[\"arn:aws:s3:::one-journey-back-as-ecr-i-serverlessdeploymentbuck-pnfckzyd5aah/*\",\"arn:aws:s3:::one-journey-back-as-ecr-i-serverlessdeploymentbuck-pnfckzyd5aah\"]}],\"Version\":\"2008-10-17\"}",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {
+              "STAGE": "ia-dev"
+            },
+            "tags_all": {
+              "STAGE": "ia-dev"
+            },
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "one_journey_back_as_ecs_g_deployment_1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::one-journey-back-as-ecs-g-serverlessdeploymentbuck-cfnvdwfpbtsv",
+            "bucket": "one-journey-back-as-ecs-g-serverlessdeploymentbuck-cfnvdwfpbtsv",
+            "bucket_domain_name": "one-journey-back-as-ecs-g-serverlessdeploymentbuck-cfnvdwfpbtsv.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "one-journey-back-as-ecs-g-serverlessdeploymentbuck-cfnvdwfpbtsv.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "one-journey-back-as-ecs-g-serverlessdeploymentbuck-cfnvdwfpbtsv",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "{\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"Bool\":{\"aws:SecureTransport\":\"false\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":[\"arn:aws:s3:::one-journey-back-as-ecs-g-serverlessdeploymentbuck-cfnvdwfpbtsv/*\",\"arn:aws:s3:::one-journey-back-as-ecs-g-serverlessdeploymentbuck-cfnvdwfpbtsv\"]}],\"Version\":\"2008-10-17\"}",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {
+              "STAGE": "genai-dev"
+            },
+            "tags_all": {
+              "STAGE": "genai-dev"
+            },
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "one_journey_back_as_ecs_g_deployment_2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::one-journey-back-as-ecs-g-serverlessdeploymentbuck-j9azhf22p0fv",
+            "bucket": "one-journey-back-as-ecs-g-serverlessdeploymentbuck-j9azhf22p0fv",
+            "bucket_domain_name": "one-journey-back-as-ecs-g-serverlessdeploymentbuck-j9azhf22p0fv.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "one-journey-back-as-ecs-g-serverlessdeploymentbuck-j9azhf22p0fv.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "one-journey-back-as-ecs-g-serverlessdeploymentbuck-j9azhf22p0fv",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "{\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"Bool\":{\"aws:SecureTransport\":\"false\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":[\"arn:aws:s3:::one-journey-back-as-ecs-g-serverlessdeploymentbuck-j9azhf22p0fv/*\",\"arn:aws:s3:::one-journey-back-as-ecs-g-serverlessdeploymentbuck-j9azhf22p0fv\"]}],\"Version\":\"2008-10-17\"}",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {
+              "STAGE": "genai"
+            },
+            "tags_all": {
+              "STAGE": "genai"
+            },
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "one_journey_data_bucket_genai",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::one-journey-data-bucket-genai",
+            "bucket": "one-journey-data-bucket-genai",
+            "bucket_domain_name": "one-journey-data-bucket-genai.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "one-journey-data-bucket-genai.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [
+              {
+                "allowed_headers": [
+                  "*"
+                ],
+                "allowed_methods": [
+                  "GET",
+                  "PUT",
+                  "POST"
+                ],
+                "allowed_origins": [
+                  "*"
+                ],
+                "expose_headers": [],
+                "max_age_seconds": 0
+              }
+            ],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "one-journey-data-bucket-genai",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "{\"Statement\":[{\"Action\":\"s3:GetObject\",\"Effect\":\"Allow\",\"Principal\":{\"AWS\":\"arn:aws:iam::cloudfront:user/CloudFront Origin Access Identity E2YPP55FSMBTGO\"},\"Resource\":\"arn:aws:s3:::one-journey-data-bucket-genai/*\"},{\"Action\":\"s3:GetObject\",\"Effect\":\"Allow\",\"Principal\":{\"Service\":\"kendra.amazonaws.com\"},\"Resource\":\"arn:aws:s3:::one-journey-data-bucket-genai/*\"}],\"Version\":\"2008-10-17\"}",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {
+              "STAGE": "genai"
+            },
+            "tags_all": {
+              "STAGE": "genai"
+            },
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [
+              {
+                "error_document": "index.html",
+                "index_document": "index.html",
+                "redirect_all_requests_to": "",
+                "routing_rules": ""
+              }
+            ],
+            "website_domain": "s3-website-eu-west-1.amazonaws.com",
+            "website_endpoint": "one-journey-data-bucket-genai.s3-website-eu-west-1.amazonaws.com"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "one_journey_files_bucket_genai",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::one-journey-files-bucket-genai",
+            "bucket": "one-journey-files-bucket-genai",
+            "bucket_domain_name": "one-journey-files-bucket-genai.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "one-journey-files-bucket-genai.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "one-journey-files-bucket-genai",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {
+              "STAGE": "genai"
+            },
+            "tags_all": {
+              "STAGE": "genai"
+            },
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "one_journey_front_pipeline_artifacts",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::one-journey-front-pipeline-artifacts-971422687659",
+            "bucket": "one-journey-front-pipeline-artifacts-971422687659",
+            "bucket_domain_name": "one-journey-front-pipeline-artifacts-971422687659.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "one-journey-front-pipeline-artifacts-971422687659.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "one-journey-front-pipeline-artifacts-971422687659",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": true,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "one_journey_genai_deployment",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::one-journey-genai-serverlessdeploymentbucket-r8r10jddmxy6",
+            "bucket": "one-journey-genai-serverlessdeploymentbucket-r8r10jddmxy6",
+            "bucket_domain_name": "one-journey-genai-serverlessdeploymentbucket-r8r10jddmxy6.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "one-journey-genai-serverlessdeploymentbucket-r8r10jddmxy6.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "one-journey-genai-serverlessdeploymentbucket-r8r10jddmxy6",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "{\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"Bool\":{\"aws:SecureTransport\":\"false\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":[\"arn:aws:s3:::one-journey-genai-serverlessdeploymentbucket-r8r10jddmxy6/*\",\"arn:aws:s3:::one-journey-genai-serverlessdeploymentbucket-r8r10jddmxy6\"]}],\"Version\":\"2008-10-17\"}",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {
+              "STAGE": "genai"
+            },
+            "tags_all": {
+              "STAGE": "genai"
+            },
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "one_journey_hosting_bucket_genai",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::one-journey-hosting-bucket-genai",
+            "bucket": "one-journey-hosting-bucket-genai",
+            "bucket_domain_name": "one-journey-hosting-bucket-genai.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "one-journey-hosting-bucket-genai.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "one-journey-hosting-bucket-genai",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {
+              "STAGE": "genai"
+            },
+            "tags_all": {
+              "STAGE": "genai"
+            },
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "one_journey_nodes_core_ge_deployment_1",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::one-journey-nodes-core-ge-serverlessdeploymentbuck-tezd9hxndj5i",
+            "bucket": "one-journey-nodes-core-ge-serverlessdeploymentbuck-tezd9hxndj5i",
+            "bucket_domain_name": "one-journey-nodes-core-ge-serverlessdeploymentbuck-tezd9hxndj5i.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "one-journey-nodes-core-ge-serverlessdeploymentbuck-tezd9hxndj5i.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "one-journey-nodes-core-ge-serverlessdeploymentbuck-tezd9hxndj5i",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {
+              "STAGE": "genai"
+            },
+            "tags_all": {
+              "STAGE": "genai"
+            },
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "one_journey_nodes_core_ge_deployment_2",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::one-journey-nodes-core-ge-serverlessdeploymentbuck-xa0dgmpjhd8h",
+            "bucket": "one-journey-nodes-core-ge-serverlessdeploymentbuck-xa0dgmpjhd8h",
+            "bucket_domain_name": "one-journey-nodes-core-ge-serverlessdeploymentbuck-xa0dgmpjhd8h.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "one-journey-nodes-core-ge-serverlessdeploymentbuck-xa0dgmpjhd8h.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "one-journey-nodes-core-ge-serverlessdeploymentbuck-xa0dgmpjhd8h",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "{\"Statement\":[{\"Action\":\"s3:*\",\"Condition\":{\"Bool\":{\"aws:SecureTransport\":\"false\"}},\"Effect\":\"Deny\",\"Principal\":\"*\",\"Resource\":[\"arn:aws:s3:::one-journey-nodes-core-ge-serverlessdeploymentbuck-xa0dgmpjhd8h/*\",\"arn:aws:s3:::one-journey-nodes-core-ge-serverlessdeploymentbuck-xa0dgmpjhd8h\"]}],\"Version\":\"2008-10-17\"}",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {
+              "STAGE": "genai"
+            },
+            "tags_all": {
+              "STAGE": "genai"
+            },
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "one_journey_transcriptions_bucket_genai",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::one-journey-transcriptions-bucket-genai",
+            "bucket": "one-journey-transcriptions-bucket-genai",
+            "bucket_domain_name": "one-journey-transcriptions-bucket-genai.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "one-journey-transcriptions-bucket-genai.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "one-journey-transcriptions-bucket-genai",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {
+              "STAGE": "genai"
+            },
+            "tags_all": {
+              "STAGE": "genai"
+            },
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "one_journey_transcriptions_genai",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::one-journey-transcriptions-genai",
+            "bucket": "one-journey-transcriptions-genai",
+            "bucket_domain_name": "one-journey-transcriptions-genai.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "one-journey-transcriptions-genai.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "one-journey-transcriptions-genai",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {
+              "STAGE": "genai"
+            },
+            "tags_all": {
+              "STAGE": "genai"
+            },
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "onejourney_core_nodes_artifacts",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::onejourney-core-nodes-artifacts-971422687659-v2",
+            "bucket": "onejourney-core-nodes-artifacts-971422687659-v2",
+            "bucket_domain_name": "onejourney-core-nodes-artifacts-971422687659-v2.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "onejourney-core-nodes-artifacts-971422687659-v2.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "onejourney-core-nodes-artifacts-971422687659-v2",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": true,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "onejourney_genai_back_artifacts",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::onejourney-genai-back-artifacts-971422687659-v2",
+            "bucket": "onejourney-genai-back-artifacts-971422687659-v2",
+            "bucket_domain_name": "onejourney-genai-back-artifacts-971422687659-v2.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "onejourney-genai-back-artifacts-971422687659-v2.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "onejourney-genai-back-artifacts-971422687659-v2",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": true,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "onejourney_genai_back_cicd_artifacts",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::onejourney-genai-back-cicd-artifacts-971422687659-v2",
+            "bucket": "onejourney-genai-back-cicd-artifacts-971422687659-v2",
+            "bucket_domain_name": "onejourney-genai-back-cicd-artifacts-971422687659-v2.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "onejourney-genai-back-cicd-artifacts-971422687659-v2.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "onejourney-genai-back-cicd-artifacts-971422687659-v2",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": true,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "onejourney_genai_cicd_artifacts",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::onejourney-genai-cicd-artifacts-971422687659",
+            "bucket": "onejourney-genai-cicd-artifacts-971422687659",
+            "bucket_domain_name": "onejourney-genai-cicd-artifacts-971422687659.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "onejourney-genai-cicd-artifacts-971422687659.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "onejourney-genai-cicd-artifacts-971422687659",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": false
+                  }
+                ]
+              }
+            ],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": true,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "stt_transcripciones",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::stt-transcripciones",
+            "bucket": "stt-transcripciones",
+            "bucket_domain_name": "stt-transcripciones.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "stt-transcripciones.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "stt-transcripciones",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": true
+                  }
+                ]
+              }
+            ],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket",
+      "name": "stt_transcripciones_genai",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "acceleration_status": "",
+            "acl": null,
+            "arn": "arn:aws:s3:::stt-transcripciones-genai",
+            "bucket": "stt-transcripciones-genai",
+            "bucket_domain_name": "stt-transcripciones-genai.s3.amazonaws.com",
+            "bucket_prefix": "",
+            "bucket_regional_domain_name": "stt-transcripciones-genai.s3.eu-west-1.amazonaws.com",
+            "cors_rule": [],
+            "force_destroy": null,
+            "grant": [
+              {
+                "id": "a1d063d75f2ab45ddbeb0eba7c1ba2cb79b645908e67c69ef475d41d179e2373",
+                "permissions": [
+                  "FULL_CONTROL"
+                ],
+                "type": "CanonicalUser",
+                "uri": ""
+              }
+            ],
+            "hosted_zone_id": "Z1BKCTXD74EZPE",
+            "id": "stt-transcripciones-genai",
+            "lifecycle_rule": [],
+            "logging": [],
+            "object_lock_configuration": [],
+            "object_lock_enabled": false,
+            "policy": "",
+            "region": "eu-west-1",
+            "replication_configuration": [],
+            "request_payer": "BucketOwner",
+            "server_side_encryption_configuration": [
+              {
+                "rule": [
+                  {
+                    "apply_server_side_encryption_by_default": [
+                      {
+                        "kms_master_key_id": "",
+                        "sse_algorithm": "AES256"
+                      }
+                    ],
+                    "bucket_key_enabled": true
+                  }
+                ]
+              }
+            ],
+            "tags": {},
+            "tags_all": {},
+            "timeouts": null,
+            "versioning": [
+              {
+                "enabled": false,
+                "mfa_delete": false
+              }
+            ],
+            "website": [],
+            "website_domain": null,
+            "website_endpoint": null
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjoxMjAwMDAwMDAwMDAwLCJkZWxldGUiOjM2MDAwMDAwMDAwMDAsInJlYWQiOjEyMDAwMDAwMDAwMDAsInVwZGF0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMCJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket_server_side_encryption_configuration",
+      "name": "one_journey_data_bucket_genai_encryption",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "bucket": "one-journey-data-bucket-genai",
+            "expected_bucket_owner": "",
+            "id": "one-journey-data-bucket-genai",
+            "rule": [
+              {
+                "apply_server_side_encryption_by_default": [
+                  {
+                    "kms_master_key_id": "",
+                    "sse_algorithm": "AES256"
+                  }
+                ],
+                "bucket_key_enabled": false
+              }
+            ]
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.s3",
+      "mode": "managed",
+      "type": "aws_s3_bucket_versioning",
+      "name": "one_journey_data_bucket_genai_versioning",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 0,
+          "attributes": {
+            "bucket": "one-journey-data-bucket-genai",
+            "expected_bucket_owner": "",
+            "id": "one-journey-data-bucket-genai",
+            "mfa": null,
+            "versioning_configuration": [
+              {
+                "mfa_delete": "",
+                "status": "Disabled"
+              }
+            ]
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjAifQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_default_security_group",
+      "name": "default",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:eu-west-1:971422687659:security-group/sg-0f094509b74d4b142",
+            "description": "default VPC security group",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-0f094509b74d4b142",
+            "ingress": [
+              {
+                "cidr_blocks": [],
+                "description": "",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": true,
+                "to_port": 0
+              }
+            ],
+            "name": "default",
+            "name_prefix": "",
+            "owner_id": "971422687659",
+            "revoke_rules_on_delete": null,
+            "tags": {},
+            "tags_all": {},
+            "vpc_id": "vpc-0bb8a69ff2508b49d"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "global_accelerator",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:eu-west-1:971422687659:security-group/sg-01647a439867040a2",
+            "description": "GlobalAccelerator configured SecurityGroup",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-01647a439867040a2",
+            "ingress": [],
+            "name": "GlobalAccelerator",
+            "name_prefix": "",
+            "owner_id": "971422687659",
+            "revoke_rules_on_delete": null,
+            "tags": {
+              "AWSServiceName": "GlobalAccelerator"
+            },
+            "tags_all": {
+              "AWSServiceName": "GlobalAccelerator"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0bb8a69ff2508b49d"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0="
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "oj_ecs_lb",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:eu-west-1:971422687659:security-group/sg-0c36a11696da59d1c",
+            "description": "OJECSSecurityGroupLB-genai",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-0c36a11696da59d1c",
+            "ingress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "Free Ingress",
+                "from_port": 443,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": false,
+                "to_port": 443
+              }
+            ],
+            "name": "OJECSSecurityGroupLB-genai",
+            "name_prefix": "",
+            "owner_id": "971422687659",
+            "revoke_rules_on_delete": null,
+            "tags": {
+              "OJ": "OJ",
+              "STAGE": "genai"
+            },
+            "tags_all": {
+              "OJ": "OJ",
+              "STAGE": "genai"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0bb8a69ff2508b49d"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0="
+        }
+      ]
+    },
+    {
+      "module": "module.security",
+      "mode": "managed",
+      "type": "aws_security_group",
+      "name": "oj_ecs_service",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:eu-west-1:971422687659:security-group/sg-0696b11cf33591870",
+            "description": "OJECSSecurityGroup-genai",
+            "egress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "",
+                "from_port": 0,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "-1",
+                "security_groups": [],
+                "self": false,
+                "to_port": 0
+              }
+            ],
+            "id": "sg-0696b11cf33591870",
+            "ingress": [
+              {
+                "cidr_blocks": [
+                  "0.0.0.0/0"
+                ],
+                "description": "Free Ingress",
+                "from_port": 80,
+                "ipv6_cidr_blocks": [],
+                "prefix_list_ids": [],
+                "protocol": "tcp",
+                "security_groups": [],
+                "self": false,
+                "to_port": 80
+              }
+            ],
+            "name": "OJECSSecurityGroup-genai",
+            "name_prefix": "",
+            "owner_id": "971422687659",
+            "revoke_rules_on_delete": null,
+            "tags": {
+              "OJ": "OJ",
+              "STAGE": "genai"
+            },
+            "tags_all": {
+              "OJ": "OJ",
+              "STAGE": "genai"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0bb8a69ff2508b49d"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6OTAwMDAwMDAwMDAwfSwic2NoZW1hX3ZlcnNpb24iOiIxIn0="
+        }
+      ]
+    },
+    {
+      "module": "module.subnet",
+      "mode": "managed",
+      "type": "aws_subnet",
+      "name": "this",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "index_key": "subnet1-euwest1",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:eu-west-1:971422687659:subnet/subnet-0fc5be2b5c992e900",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "eu-west-1a",
+            "availability_zone_id": "euw1-az2",
+            "cidr_block": "10.0.0.0/26",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-0fc5be2b5c992e900",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "971422687659",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "tags": {
+              "Name": "subnet1-euwest1"
+            },
+            "tags_all": {
+              "Name": "subnet1-euwest1"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0bb8a69ff2508b49d"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9"
+        },
+        {
+          "index_key": "subnet2-euwest1",
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:eu-west-1:971422687659:subnet/subnet-07155ea73ae4fe372",
+            "assign_ipv6_address_on_creation": false,
+            "availability_zone": "eu-west-1b",
+            "availability_zone_id": "euw1-az3",
+            "cidr_block": "10.0.0.64/26",
+            "customer_owned_ipv4_pool": "",
+            "enable_dns64": false,
+            "enable_lni_at_device_index": 0,
+            "enable_resource_name_dns_a_record_on_launch": false,
+            "enable_resource_name_dns_aaaa_record_on_launch": false,
+            "id": "subnet-07155ea73ae4fe372",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_association_id": "",
+            "ipv6_native": false,
+            "map_customer_owned_ip_on_launch": false,
+            "map_public_ip_on_launch": false,
+            "outpost_arn": "",
+            "owner_id": "971422687659",
+            "private_dns_hostname_type_on_launch": "ip-name",
+            "tags": {
+              "Name": "subnet2-euwest1"
+            },
+            "tags_all": {
+              "Name": "subnet2-euwest1"
+            },
+            "timeouts": null,
+            "vpc_id": "vpc-0bb8a69ff2508b49d"
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJlMmJmYjczMC1lY2FhLTExZTYtOGY4OC0zNDM2M2JjN2M0YzAiOnsiY3JlYXRlIjo2MDAwMDAwMDAwMDAsImRlbGV0ZSI6MTIwMDAwMDAwMDAwMH0sInNjaGVtYV92ZXJzaW9uIjoiMSJ9"
+        }
+      ]
+    },
+    {
+      "module": "module.vpc",
+      "mode": "managed",
+      "type": "aws_vpc",
+      "name": "main",
+      "provider": "provider[\"registry.terraform.io/hashicorp/aws\"]",
+      "instances": [
+        {
+          "schema_version": 1,
+          "attributes": {
+            "arn": "arn:aws:ec2:eu-west-1:971422687659:vpc/vpc-0bb8a69ff2508b49d",
+            "assign_generated_ipv6_cidr_block": false,
+            "cidr_block": "10.0.0.0/24",
+            "default_network_acl_id": "acl-0caea3b69880a24ba",
+            "default_route_table_id": "rtb-02584e20089727e1a",
+            "default_security_group_id": "sg-0f094509b74d4b142",
+            "dhcp_options_id": "dopt-0575ec61811ee1bd3",
+            "enable_dns_hostnames": false,
+            "enable_dns_support": true,
+            "enable_network_address_usage_metrics": false,
+            "id": "vpc-0bb8a69ff2508b49d",
+            "instance_tenancy": "default",
+            "ipv4_ipam_pool_id": null,
+            "ipv4_netmask_length": null,
+            "ipv6_association_id": "",
+            "ipv6_cidr_block": "",
+            "ipv6_cidr_block_network_border_group": "",
+            "ipv6_ipam_pool_id": "",
+            "ipv6_netmask_length": 0,
+            "main_route_table_id": "rtb-02584e20089727e1a",
+            "owner_id": "971422687659",
+            "tags": {},
+            "tags_all": {}
+          },
+          "sensitive_attributes": [],
+          "identity_schema_version": 0,
+          "private": "eyJzY2hlbWFfdmVyc2lvbiI6IjEifQ=="
+        }
+      ]
+    }
+  ],
+  "check_results": null
+}

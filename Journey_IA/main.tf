@@ -15,15 +15,17 @@ provider "aws" {
 
 locals {
   common_tags = {
-    Environment = "genai"
-    Project     = "OneJourney"
+    Environment = var.environment
+    Project     = var.project_name
   }
-   security_group_tags = {
-    "OJ"                            = "OJ"
-    "STAGE"                         = "genai"
-    "aws:cloudformation:stack-name" = "one-journey-back-as-ecs-genai"
-    "aws:cloudformation:stack-id"   = "arn:aws:cloudformation:eu-west-1:971422687659:stack/one-journey-back-as-ecs-genai/2cebadf0-15f1-11f0-90e8-0658f6897213"
+  
+  security_group_tags = {
+    "OJ"                            = var.oj_tag
+    "STAGE"                         = var.environment
+    "aws:cloudformation:stack-name" = var.cloudformation_stack_name
+    "aws:cloudformation:stack-id"   = var.cloudformation_stack_id
   }
+  
   custom_roles = {
     "OjautoHostFileNodeRole" = {
       name          = "OjautoHostFileNodeRole"
@@ -33,7 +35,7 @@ locals {
     "CloudWatch-CrossAccountSharingRole" = {
       name          = "CloudWatch-CrossAccountSharingRole"
       description   = ""
-      principal_aws = ["arn:aws:iam::532498934072:root"] 
+      principal_aws = [var.cloudwatch_cross_account_arn]
     },
     "one-journeyStepFunctionRole" = {
       name          = "one-journeyStepFunctionRole"
@@ -47,59 +49,39 @@ module "s3" {
   source = "./modules/s3"
   
   environment = var.environment
-  common_tags = var.common_tags
+  common_tags = local.common_tags
 }
 
 module "vpc" {
-  source = "./modules/vpc"
-  vpc_cidr_block = "10.0.0.0/24" 
-
-  environment = var.environment
-  common_tags = var.common_tags
+  source         = "./modules/vpc"
+  vpc_cidr_block = var.vpc_cidr_block
+  environment    = var.environment
+  common_tags    = local.common_tags
 }
 
 module "security" {
   source = "./modules/security"
-  # Pass the VPC ID from the networking module's output
   vpc_id = module.vpc.vpc_id
-
-  tags = local.security_group_tags
+  tags   = local.security_group_tags
 }
 
 module "subnet" {
-  source = "./modules/subnet"
-
-  # Pass the VPC ID from your VPC module's output
-  vpc_id = module.vpc.vpc_id
-
-  # Define the subnets based on your JSON data
-  subnets = [
-    {
-      name              = "subnet1-euwest1"
-      cidr_block        = "10.0.0.0/26"
-      availability_zone = "eu-west-1a"
-    },
-    {
-      name              = "subnet2-euwest1"
-      cidr_block        = "10.0.0.64/26"
-      availability_zone = "eu-west-1b"
-    }
-  ]
+  source  = "./modules/subnet"
+  vpc_id  = module.vpc.vpc_id
+  subnets = var.subnets
 }
 
 module "routing" {
-  source = "./modules/routing"
-
+  source     = "./modules/routing"
   vpc_id     = module.vpc.vpc_id
   subnet_ids = module.subnet.subnet_ids
 }
 
 module "iam_groups" {
-  source = "./modules/iam_groups"
-  group_names = [
-    "Developers",
-    "ManagedMFA",
-    "RequiredMFA",
-  ]
+  source      = "./modules/iam_groups"
+  group_names = var.iam_group_names
 }
 
+module "lambda_functions" {
+  source = "./modules/lambda"
+}
